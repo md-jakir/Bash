@@ -1,0 +1,10 @@
+#!/bin/bash
+dirpath=/var/www/vhosts/default/htdocs/backup/
+ c=0; max=41
+        while [ $c -le $max ]; do
+                cd $dirpath; dest=(*/)
+                  if [ -d ${dest[$c]} ]; then
+                        cd ${dest[$c]}; find . -type f -name "*.tbz2" -mtime +60 -exec rm -rf {} \;
+                fi
+        c=$[$c+1]
+done
