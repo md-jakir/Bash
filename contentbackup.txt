@@ -1,4 +1,7 @@
 #!/bin/bash
+#this is a program to work with taking backup for all website data backup if have multiple websites in single server.
+#Backup goes to respective directory defined backup path.
+#source drectory and destination directory are mapped with owner permission. 
 srcdir=/path/to/sourcepath/
 destdir=/path/to/destdir/
         m=0; max=59
