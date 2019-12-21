@@ -1,0 +1,30 @@
+dirpath=/root/test/
+d_array() {
+	cd $dirpath; dir=(*/)
+	c=0; max=4
+	while [ $c -le $max ]; do 
+		if [ -d ${dir[$c]} ]; then
+			echo ${dir[$c]}
+		fi
+		c=$[$c+1]
+	done	
+}
+f_array() {
+	cd $dirpath; file=(*)
+	m=0; max1=4
+	while [ $m -le $max ]; do
+		if [ -f ${file[$c]} ]; then
+			echo ${file[$c]}
+		fi
+		m=$[$m+1]
+	done
+}
+check() {
+	#c=0; max=4
+	#while [ $c -lt $max ]; do
+	       cd 	
+	if [[ "$1" = "${dir[$c]}" && -d ${dir[$c]} ]]; then
+		d_array
+		fi	fi
+	}
+dircheck $1
