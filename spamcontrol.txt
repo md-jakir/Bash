@@ -1,0 +1,18 @@
+#!/bin/bash
+# In postfix mailq goes high request while spaming
+# This porgram tells administrator spaming is occuring
+# mailq report will be emailed to administrator
+mailq > /mailq/deferred.txt
+empty=$(sed -n '1 p' /mailq/deferred.txt)
+if [ "$empty" = "Mail queue is empty" ]; then
+        exit
+fi
+maxq=100
+qmail=$(mailq | awk END{print} | awk '{print $5}')
+    if [ $qmail -ge $maxq ]; then
+          # var1=$(mailq | awk  '/@/ {print $7}')
+        #   var2=$(mailq | awk  '/@/ {print $7}' | awk 'NR==$NC{print $1}')
+           echo "Total email in mailq is: $qmail. If any unexpected event is occuring in $HOSTNAME. Please check attached and protect from spam." | mailx -s "mailq list" -a /mailq/deferred.txt abc@example.com
+
+   fi
+exit
