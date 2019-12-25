@@ -1,0 +1,21 @@
+#!/bin/bash
+#check directory and file both are exist or not. 
+dirpath=/root/test/
+d_array() {
+        cd $dirpath; dir=(*)
+        c=0; max=4
+
+        while [ $c -le $max ]; do
+                if [ -d ${dir[$c]} ] && [ "$1" = ${dir[$c]} ]; then
+                        echo "This directory is exist:" ${dir[$c]}
+                fi
+                if [ -f ${dir[$c]} ] && [ "$2" = ${dir[$c]} ]; then
+                        echo "This file is exist:" ${dir[$c]}
+                fi
+		c=$[$c+1]
+	done
+}
+check() {
+	d_array $1 $2
+}
+check $1 $2
