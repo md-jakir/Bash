@@ -1,7 +1,7 @@
 #!/bin/bash
 #multiple databases backup
-#Backing up multiple databases for multiple websites in sing server hosted.
-#And sharing to down for clients and send database to client's email.
+#Backing up multiple databases for multiple websites in shared hosted server.
+#And sharing to download for clients and send database to client's email.
 dirpath=/path/to/backup/path/
 dblist=/dbname/path/
 email=/email/list/
