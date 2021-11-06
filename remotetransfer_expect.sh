@@ -6,7 +6,7 @@ if [ "$1" = "ssh port" ]; then
         set timeout 300
         spawn scp -r -P $1 xyz@www.example.com:/home/xyz/CRM_DB_backup/database_name_`date +\%F\-\%H`.tbz2 /mnt/slave/CRM_DB_Backup
         expect "password:"
-        send "**********"
+        send "**********\r"
         expect "*#*"
 EOF
 }
