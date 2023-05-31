@@ -4,6 +4,7 @@
 DB_USER="******"
 DB_PASSWORD="******"
 DB_NAME="********"
+DB_HOST="db_endpoint_address"
 
 S3_BUCKET_NAME="*********"
 S3_BUCKET_PATH="*********"
@@ -18,7 +19,7 @@ GZIP_BACKUP_FILE_NAME="$MYSQL_BACKUP_FILE_NAME.gz"
 GZIP_BACKUP_FILE_PATH="/tmp/$GZIP_BACKUP_FILE_NAME"
 
 # Backup MySQL database
-mysqldump --set-gtid-purged=OFF -h medictproduploadrds.cctc6p9gkaei.ap-northeast-1.rds.amazonaws.com --user=$DB_USER --password=$DB_PASSWORD $DB_NAME > $MYSQL_BACKUP_FILE_PATH
+mysqldump --set-gtid-purged=OFF -h $DB_HOST --user=$DB_USER --password=$DB_PASSWORD $DB_NAME > $MYSQL_BACKUP_FILE_PATH
 
 # Compress backup file using gzip
 gzip $MYSQL_BACKUP_FILE_PATH
