@@ -1,5 +1,14 @@
 # bash
 This is for bash scripts to make easy server backup control.
-Bash script is for managing servers a lot easily and getting any notification from server.
-In Linux everything is file.
-SED & AWK is very essentail to control a file.
+The bash script is for managing servers a lot more easily and getting any notification from the server.
+In Linux, everything is a file.
+SED & AWK is very essential to control a file.
+
+# Variable expanding
+
+- Always good practice to use {} for variables like below
+
+      ${var1}
+# Scriptflow
+
+
